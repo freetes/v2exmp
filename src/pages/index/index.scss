@@ -1,0 +1,89 @@
+
+.index{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.topic-div{
+  width: 100%;
+  margin-top: 10px;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.topic-div > .creater-div{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.creater-div > .user-image{
+  width: 30PX;
+  height: 30PX;
+  border-radius: 5PX;
+}
+.creater-div > .user-name{
+  font-size: 14PX;
+  color: black;
+  margin-left: 20px;
+}
+.creater-div > .time{
+  font-size: 14PX;
+  color: gray;
+  margin-left: 20px;
+}
+.topic-div > .title{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 16PX;
+  // line-height: 20PX;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.topic-div > .others{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.topic-div > .others > text{
+  font-size: 12PX;
+  margin-right: 15px;
+}
+.topic-div > .others > .tag{
+  padding: 5px 10px;
+  background-color: gray;
+  color: white;
+  border-radius: 5PX;
+}
+
+
+.footer{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-top: 1px solid gray;
+}
+
+.footer > text{
+  width: 100%;
+  text-align: center;
+  color: gray;
+  font-size: 12PX;
+}

@@ -1,0 +1,105 @@
+
+.index{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+
+.user-image{
+  width: 30PX;
+  height: 30PX;
+  border-radius: 5PX;
+}
+
+// topic-user-div
+.topic-user-div{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.topic-user-div > .user-name{
+  font-size: 14PX;
+  color: black;
+  margin-left: 20px;
+}
+.topic-user-div > .time{
+  font-size: 14PX;
+  color: gray;
+  margin-left: 20px;
+}
+
+.title{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10PX 20px;
+  font-size: 20PX;
+  line-height: 26PX;
+  font-weight: bold;
+}
+.content{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10PX 20px;
+  font-size: 16PX;
+  line-height: 26PX;
+}
+
+// 评论
+.reply-div{
+  width: 100%;
+  margin-top: 10px;
+  background-color: white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.reply-div > .reply-user-div{
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+.reply-user-div > .user-image{
+  width: 24PX;
+  height: 24PX;
+}
+.reply-user-div > .user-name{
+  font-size: 14PX;
+  color: black;
+  margin-left: 20px;
+}
+.reply-user-div > .time{
+  font-size: 14PX;
+  color: gray;
+  margin-left: 20px;
+}
+.reply-div > .reply-content{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  font-size: 16PX;
+  margin-bottom: 10px;
+}
+
+.footer{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-top: 1px solid gray;
+}
+
+.footer > text{
+  width: 100%;
+  text-align: center;
+  color: gray;
+  font-size: 12PX;
+}

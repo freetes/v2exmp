@@ -1,0 +1,48 @@
+{
+	"miniprogramRoot": "dist/",
+	"projectname": "miniprogram",
+	"description": "",
+	"appid": "wxd4a0c5fd25cafabf",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false
+	},
+	"compileType": "miniprogram",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/topic/index",
+					"pathName": "pages/topic/index",
+					"query": "id= 642805",
+					"scene": null
+				}
+			]
+		}
+	}
+}

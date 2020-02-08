@@ -1,0 +1,16 @@
+
+.footer{
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.footer > text{
+  width: 100%;
+  text-align: center;
+  color: gray;
+  font-size: 12PX;
+}
