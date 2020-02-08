@@ -6,25 +6,44 @@ import './index.scss'
 
 moment.locale('zh-cn')
 
-export default class Index extends Component {
+export default class Node extends Component {
   state = {
+    nodeInfo: {},
     topics: []
   }
 
   componentWillMount () {
+    const id = this.$router.params.id
+
     Taro.showLoading({
-      title: '获取热点数据中...'
+      title: '获取节点数据中...'
     })
 
     Taro.request({
-      url: 'https://www.v2ex.com/api/topics/hot.json'
+      url: 'https://www.v2ex.com/api/nodes/show.json?id=' + id
     }).then(res=>{
       this.setState({
-        topics: res.data
+        nodeInfo: res.data
       })
 
-      Taro.hideLoading()
+      Taro.setNavigationBarTitle({title: res.data.title})
+
+      Taro.showLoading({
+        title: '获取评论数据中...'
+      })
+    }).then(()=>{
+      Taro.request({
+        url: 'https://www.v2ex.com/api/topics/show.json?node_id=' + id
+      }).then(res=>{
+        this.setState({
+          topics: res.data
+        })
+  
+        Taro.hideLoading()
+      })
+  
     })
+
   }
 
   componentDidMount () { }
@@ -35,30 +54,18 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
-  /**
-   * 指定config的类型声明为: Taro.Config
-   *
-   * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-   * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-   * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-   */
   config: Config = {
-    navigationBarTitleText: '首页'
+    navigationBarTitleText: '节点信息'
   }
 
-  gotoTopic = (id)=>{
+  goto = (id)=>{
     Taro.navigateTo({
       url: '/pages/topic/index?id=' + id
     })
   }
-  gotoNode = (id)=>{
-    Taro.navigateTo({
-      url: '/pages/node/index?id=' + id
-    })
-  }
 
   render () {
-    const {topics} = this.state
+    const {nodeInfo, topics} = this.state
 
     const content = topics.map(item=>{
       return (
@@ -66,11 +73,9 @@ export default class Index extends Component {
           <View className='creater-div'>
             <Image className='user-image' src={'https://' + item.member.avatar_mini}/>
             <Text className='user-name'>{ item.member.username }</Text>
-            <Text className='time'>{ moment(item.created * 1000).fromNow() }</Text>
           </View>
-          <View className='title' onClick={this.gotoTopic.bind(this, item.id)}>{ item.title }</View>
+          <View className='title' onClick={this.goto.bind(this, item.id)}>{ item.title }</View>
           <View className='others'>
-            <Text className='tag' onClick={this.gotoNode.bind(this, item.node.id)}>{ item.node.title }</Text>
             <Text className=''>{ moment(item.created * 1000).fromNow() }</Text>
             <Text className=''>回复数: { item.replies }</Text>
           </View>
@@ -80,6 +85,14 @@ export default class Index extends Component {
 
     return (
       <View className='index'>
+        <View className='node-div'>
+          <Image className='node-image' src={'https://' + nodeInfo.avatar_normal}/>
+          <View className='info-div'>
+            <Text className='topics-number'>总主题数：{ nodeInfo.topics }</Text>
+            <Text className='words'>{nodeInfo.header}</Text>
+          </View>
+        </View>
+        
         {content}
 
         {/* <View className='footer'>

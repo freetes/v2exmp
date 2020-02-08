@@ -19,7 +19,7 @@ export default class Index extends Component {
     const id = this.$router.params.id
     
     Taro.showLoading({
-      title: '获取话题数据中...'
+      title: '获取主题数据中...'
     })
 
     Taro.request({
@@ -53,7 +53,7 @@ export default class Index extends Component {
   componentDidHide () { }
 
   config: Config = {
-    navigationBarTitleText: '话题'
+    navigationBarTitleText: '主题'
   }
 
   render () {

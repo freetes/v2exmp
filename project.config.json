@@ -54,6 +54,20 @@
 					"pathName": "pages/topic/index",
 					"query": "id= 642805",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/nodes/index",
+					"pathName": "pages/nodes/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/node/index",
+					"pathName": "pages/node/index",
+					"query": "id=8",
+					"scene": null
 				}
 			]
 		}

@@ -1,43 +1,54 @@
 
 .index{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: start;
   align-items: start;
+  flex-wrap: wrap;
+  padding-bottom: 20PX;
 }
 
-.user-image{
-  width: 30PX;
-  height: 30PX;
-  border-radius: 5PX;
-}
-
-// topic-user-div
-.topic-user-div{
-  width: 100%;
+// node-div
+.node-div{
+  margin-left: 2%;
+  width: 47%;
+  margin-top: 10px;
   padding: 20px;
-  padding-bottom: 0;
+  background-color: white;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: start;
   align-items: center;
 }
-.topic-user-div > .user-name{
-  font-size: 14PX;
-  color: black;
-  margin-left: 20px;
+.node-div > .node-image{
+  width: 40PX;
+  height: 40PX;
 }
-.topic-user-div > .time{
+
+.node-div > .node-info-div{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+.node-info-div > .name{
+  font-size: 18PX;
+  color: black;
+  line-height: 36PX;
+}
+.node-info-div > .topics,
+.node-info-div > .stars{
   font-size: 14PX;
   color: gray;
-  margin-left: 20px;
+  line-height: 18PX;
 }
 
 .title{
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10PX 20px;
   font-size: 20PX;
   line-height: 26PX;
   font-weight: bold;
@@ -45,7 +56,7 @@
 .content{
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10PX 20px;
   font-size: 16PX;
   line-height: 26PX;
 }

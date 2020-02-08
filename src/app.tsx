@@ -30,12 +30,26 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/topic/index',
+      'pages/nodes/index',
+      'pages/node/index',
     ],
+    tabBar: {
+      color: '#aaaaaa',
+      selectedColor: '#000000',
+      list: [{
+        pagePath: 'pages/index/index',
+        text: '首页',
+      }, {
+        pagePath: 'pages/nodes/index',
+        text: '节点'
+      }]
+    },
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'V2EX',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      backgroundColor: '#e2e2e2'
     }
   }
 
